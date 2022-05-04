@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Html CRUD with Pure JavaScript
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <form class="add-album">
+                    <div class="form-group">
+                        <label for="ID">Post Id</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="postId" id="postId">
+                    </div>
+                    <div class="form-group">
+                        
+                        <label for="identity">Id</label>
+                        <input type="text" name="Id" id="Id">
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="candName" id="candName">
+                    </div>
+                    <div class="form-group">
+                        <label for="mail">Email</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Body</label>
+                        <input type="text" name="body" id="body">
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" value="Create">
+                    </div>
+                </form>
+            </td>
+          
+        </tr>
+    </table>
+    <script src="createAlbum.js"></script>
+</body>
+
+</html>
