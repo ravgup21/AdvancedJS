@@ -1,7 +1,13 @@
-fetch("https://jsonplaceholder.typicode.com/comments/1").then(
-  response => {
+var id;
+function fetchId() {
+ const urlParams = new URLSearchParams(window.location.search);
+ id = urlParams.get("id");
+}
+fetchId();
+fetch("https://jsonplaceholder.typicode.com/comments/" + id).then(
+  (response) => {
     response.json().then(
-      data => {
+      (data) => {
         console.log(data);
         if (Object.keys(data).length > 0) {
 

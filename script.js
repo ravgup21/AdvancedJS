@@ -1,8 +1,8 @@
 
 fetch("https://jsonplaceholder.typicode.com/comments").then(
-  response => {
+  (response) => {
     response.json().then(
-      data => {
+      (data) => {
         console.log(data);
         if (data.length > 0) {
 
@@ -10,18 +10,19 @@ fetch("https://jsonplaceholder.typicode.com/comments").then(
           data.forEach((itemData) => {
             temp += "<tr>";
             temp += "<td>" + itemData.postId + "</td>";
+
+            const url = "userDetails.html?id=" + itemData.id;
            
             //temp += "<td><a href='userDetails.html'>" + itemData.id + "</a></td>";
-            temp += "<td><a href='userDetails.html'><Link to={'/userDetails.html?Id=' +itemData.id}>" + itemData.id + "</Link></a></td>";
+            temp += "<td><a href=" + url + ">"  + itemData.id + "</a></td>";
             
-           // '<a href="userDetails.html">' + itemData.id +'</a>';
+           
             temp += "<td>" + itemData.name + "</td>";
             temp += "<td>" + itemData.email + "</td>";
             temp += "<td>" + itemData.body + "</td></tr>";
             console.log(itemData.id);
 
-            //window.location.href = 'userDetails.html'; 
-            //document.getElementById(itemData.id).click();
+            
           });
           document.getElementById('data').innerHTML = temp;
           
